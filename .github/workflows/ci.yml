@@ -19,6 +19,7 @@ jobs:
           APP_DB_USERNAME: postgres
           APP_DB_PASSWORD: postgres
           APP_DB_NAME: postgres
+          POSTGRES_PASSWORD: postgres
         # Set health checks to wait until postgres has started
         options: >-
           --health-cmd pg_isready
