@@ -14,19 +14,19 @@ jobs:
 
     services:
       postgres:
-        image: postgres
+        image: postgres:13
         env:
           APP_DB_USERNAME: postgres
           APP_DB_PASSWORD: postgres
           APP_DB_NAME: postgres
         # Set health checks to wait until postgres has started
-        ports:
-          - 5432:5432
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
+        ports:
+          - 5432:5432
 
     steps:
     - name: Set up Go
