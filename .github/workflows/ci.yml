@@ -39,7 +39,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Run migrations
-      uses: make migrateup
+      run: make migrateup
 
     - name: Build
       run: go build -v ./...
