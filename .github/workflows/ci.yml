@@ -19,6 +19,7 @@ jobs:
           APP_DB_USERNAME: postgres
           APP_DB_PASSWORD: postgres
           APP_DB_NAME: postgres
+          POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
         # Set health checks to wait until postgres has started
         options: >-
@@ -41,7 +42,7 @@ jobs:
 
     - name: Install golang-migrate
       run: |
-        curl -L https://github.com/golang-migrate/migrate/releases/download/v4.14.1/migrate.$platform-amd64.tar.gz | tar xvz
+        curl -L https://github.com/golang-migrate/migrate/releases/download/v4.14.1/migrate.linux-amd64.tar.gz | tar xvz
         sudo mv migrate.linux-amd64 /usr/bin/migrate
         which migrate
 
